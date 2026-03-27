@@ -1,0 +1,12 @@
+body{
+    background-color: bisque;
+    color: cornflowerblue;
+}
+
+div{
+    border: 10px solid rgb(79, 123, 205);
+}
+
+#contenedor{
+    border: 10px solid rgb(156, 234, 192);
+}
