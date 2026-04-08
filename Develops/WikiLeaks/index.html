@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wikileaks</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        /* HEADER */
+        div#header {
+            background-color: #111;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        div#header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        div#header img {
+            width: 60px;
+        }
+
+        /* NAV */
+        div#nav {
+            background-color: #222;
+            padding: 10px 20px;
+        }
+
+        div#nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        div#nav a:hover {
+            color: white;
+        }
+
+        /* MAIN CONTENT */
+        div#content {
+            background-color: white;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        /* LEAK CARD */
+        div.leak {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        div.leak h3 {
+            margin: 0 0 8px 0;
+        }
+
+        div.leak img {
+            width: 180px;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+
+        div.leak p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        div.leak::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* CATEGORIES */
+        div#categories {
+            background-color: white;
+            padding: 15px 20px;
+            margin-top: 15px;
+        }
+
+        div#categories ul {
+            columns: 2;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        div#footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header">
+        <img src="rubon33.png" alt="WikiLeaks logo">
+        <h1>WikiLeaks</h1>
+    </div>
+
+    <!-- NAV -->
+    <div id="nav">
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="news.html">News</a> |
+        <a href="leaks.html">Leaks</a> |
+        <a href="submissions.html">Submissions</a> |
+        <a href="donation.html">Donations</a> |
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div id="categories">
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="+-Intelligence-+.html">Intelligence</a></li>
+            <li><a href="+-Global-Economy-+.html">Global Economy</a></li>
+            <li><a href="+-International-Politics-+.html">International Politics</a></li>
+            <li><a href="+-Corporations-+.html">Corporations</a></li>
+            <li><a href="+-Government-+.html">Government</a></li>
+            <li><a href="+-War-Military-+.html">War &amp; Military</a></li>
+        </ul>
+    </div>
+
+    <!-- LEAKS -->
+    <div id="content">
+        <h2>Featured</h2>
+
+        <div class="leak">
+            <img src="arton717.png" alt="The Intolerance Network">
+            <h3><a href="intolerancenetwork/">The Intolerance Network</a></h3>
+            <p><b>05 August 2021</b></p>
+            <p>WikiLeaks publishes "The Intolerance Network" — over 17,000 documents from internationally active right wing campaigning organisations HazteOir and CitizenGO.</p>
+        </div>
+
+        <div class="leak">
+            <img src="arton715.png" alt="OPCW Douma">
+            <h3><a href="opcw-douma/">OPCW Douma</a></h3>
+            <p><b>23 October 2019</b></p>
+            <p>WikiLeaks publishes a statement made by a panel that listened to testimony and reviewed evidence from a whistleblower from the OPCW.</p>
+        </div>
+
+        <div class="leak">
+            <img src="rubon33.png" alt="Pope's Orders">
+            <h3><a href="popeorders/">Pope's Orders</a></h3>
+            <p><b>30 January 2019</b></p>
+            <p>WikiLeaks publishes a set of documents from the Catholic Church, shedding light on the power struggle within highest offices.</p>
+        </div>
+
+        <div class="leak">
+            <img src="arton706.jpg" alt="US Embassy Shopping List">
+            <h3><a href="https://shoppinglist.wikileaks.org">US Embassy Shopping List</a></h3>
+            <p><b>21 December 2018</b></p>
+            <p>WikiLeaks publishes a searchable database of more than 16,000 procurement requests posted by United States embassies around the world.</p>
+        </div>
+
+        <div class="leak">
+            <img src="arton704.png" alt="Amazon Atlas">
+            <h3><a href="amazon-atlas/">Amazon Atlas</a></h3>
+            <p><b>11 October 2018</b></p>
+            <p>WikiLeaks publishes a highly confidential internal document from the cloud computing provider Amazon.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+        &copy; 2024 WikiLeaks &nbsp;|&nbsp;
+        <a href="about.html" style="color:#888;">About</a> &nbsp;|&nbsp;
+        <a href="submissions.html" style="color:#888;">Submit</a> &nbsp;|&nbsp;
+        <a href="donation.html" style="color:#888;">Donate</a>
+    </div>
+
+</body>
+</html>

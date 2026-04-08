@@ -1,0 +1,28 @@
+body{
+    background-color: cornflowerblue;
+}
+#CCS {
+  background-color: yellow;
+  color: red;
+  border: 3px dashed green;
+  padding: 10px;
+  margin: 10px;
+}
+
+#Basic {
+  background-color: purple;
+  color: lime;
+  border: 4px orange;
+  padding: 15px;
+  margin: 10px;
+  text-align: justify;
+  font-size: 22px;
+}
+
+#Introduction {
+  background-color: cyan;
+  color: brown;
+  border: 5px black;
+  padding: 20px;
+  margin: 10px;
+}

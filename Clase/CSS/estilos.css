@@ -1,0 +1,16 @@
+body{
+    background-color: bisque;
+    color: cornflowerblue;
+}
+
+div{
+    border: 10px solid rgb(79, 123, 205);
+}
+
+#contenedor{
+    border: 10px solid rgb(156, 234, 192);
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 3fr;
+
+}
