@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Clase antes de vacaciones</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
 <body >
-   <div id="contenedor">
+    <div id="contenedor">
      <div class="elemento"> Sección 1</div>
      <div class="elemento"> Sección 2</div>
      <div class="elemento"> Sección 3</div>
       
-   </div> 
+    </div> 
+    <button id="uno">Click</button>
+    <button id="dos">Artista</button>
+    <button id="tres">Companero</button>
   
   <style >
     
@@ -18,9 +23,7 @@
 
   </style>
    
-   <div id="encabezado">
-
-   </div>
+   <div id="encabezado"></div>
 
   
 
@@ -50,7 +53,49 @@
     document.getElementById("encabezado").appendChild(x);
     
   }
-  obtenerJSON();
+  let g = document.getElementById("uno");
+  g.textContent = "Romeo y Julieta";
+  g.addEventListener("click", obtenerJSON);
+
+  async function obtenerArtista() {
+
+    const answer = await fetch('https://www.theaudiodb.com/api/v1/json/123/search.php?s=Bad+Bunny')
+    const datos = await answer.json();
+    console.log(datos)
+
+    const y = document.createElement("img");
+    let x = document.createElement("p");
+    x.textContent = datos.artists[0].strBiography;
+    y.src = datos.artists[0].strArtistThumb;
+
+    document.getElementById("encabezado").appendChild(x);
+    document.getElementById("encabezado").appendChild(y);
+  }
+
+    async function obtenerArtistaCom() {
+
+    const answer = await fetch('https://www.theaudiodb.com/api/v1/json/123/search.php?s=AJR')
+    const datos = await answer.json();
+    console.log(datos)
+
+    const image = document.createElement("img");
+    let element = document.createElement("p");
+    element.textContent = datos.artists[0].strBiography;
+    image.src = datos.artists[0].strArtistThumb;
+
+    document.getElementById("encabezado").appendChild(element);
+    document.getElementById("encabezado").appendChild(image);
+  }
+
+  let button_dos = document.getElementById("dos");
+  button_dos.textContent = "Artista";
+  button_dos.addEventListener("click", obtenerArtista);
+
+  let button_tres = document.getElementById("tres");
+  button_tres.textContent = "Artista Compañero";
+  button_tres.addEventListener("click", obtenerArtistaCom);
+
+
   
   
 </script>
