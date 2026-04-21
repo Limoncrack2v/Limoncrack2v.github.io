@@ -8,7 +8,7 @@
   "main": "archivo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bible": "node actividad_servidor.js"
+    "current": "node api_server.js"
   },
   "dependencies": {
     "axios": "^1.15.0",
