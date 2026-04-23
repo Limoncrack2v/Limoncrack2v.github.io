@@ -81,15 +81,15 @@ import fs from 'fs';
       }
 
     //Esta función deberá enviar un json con los datos de las movimientos
-    function getMoviminientos(req, res) {
+    function getMovimientos(req, res) {
     //Tienes que corregir varias cosas en esta sección
       res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end([{
+      res.end(JSON.stringify([{
           "prestamos": "3",
           "cantidad_deb" : "2000",
           "Plazos": "5"
         }
-      ]);
+      ]));
     }
 
     function manejarRuta404(req, res) {
@@ -99,9 +99,83 @@ import fs from 'fs';
     }
 
     function MostrarEquipo(req, res) {
-
+      fs.readFile('equipo.html', 'utf8', (error, data) => {
+        if (error) {
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('Oh no!!!!');
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data);
+      });
     }
 
+    function checkout(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "prestamos_pendientes": "id_prestamo"
+        }
+      ]));
+    }
+
+    function mostrarUsuarios(req, res){
+      fs.readFile('equipo.html', 'utf8', (error, data) => {
+        if (error) {
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('Oh no!!!!');
+          return;
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data);
+      });
+    }
+
+    function userinfo(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "username": "id_user",
+        "saldo" : '15000',
+        "estado" : "Bueno",
+        "prestamos_activos" : "10"
+        }
+      ]));      
+    }
+
+    function autentication(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "username": "id_user",
+        "login" : "true"
+        }
+      ]));      
+    }
+
+    function getmorasidad(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "username": "id_user",
+        "Morasidad" : "false"
+        }
+      ]));      
+    }
+
+    function getSaldo(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "username": "id_user",
+        "Saldo" : "18000"
+        }
+      ]));      
+    }
+
+    function getCashback(req, res){
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify([{
+        "username": "id_user",
+        "Cashback" : "1000"
+        }
+      ]));      
+    }
     //incluye el enlace a la documentación de createServer
     // createServer permite crear un servidor HTTP en Node.js que recibe solicitudes y envía respuestas.
     // Documentación oficial: https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener
@@ -116,13 +190,31 @@ import fs from 'fs';
         getMovimientos(req, res);
       } 
       else if (url === '/usuarios') {
-        getUsuarios(req, res);
+        mostrarUsuarios(req, res);
       } 
       else if (url === '/movimientos') {
         mostrarMovimientos(req, res);
       }
       else if (url === '/equipo') {
-
+        MostrarEquipo(req, res);
+      }
+      else if (url === '/api/checkout'){
+        checkout(req, res);
+      }
+      else if (url === '/api/user'){
+        userinfo(req, res);
+      }
+      else if (url === '/api/autentificacion'){
+        autentication(req, res);
+      }
+      else if (url === '/api/estado_morasidad'){
+        getmorasidad(req, res);
+      }
+      else if (url === '/api/saldo'){
+        getSaldo(req, res);
+      }
+      else if (url === '/api/cashback'){
+        getCashback(req, res);
       }
       //Agrega una ruta /equipo y su función correspondiente para que muestre el equipo del proyecto
       //Haz una página equipo.html correspondiente
