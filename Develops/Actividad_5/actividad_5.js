@@ -15,7 +15,7 @@ import fs from 'fs';
        //Agrega lo mínimo necesario en bienvenida.html
        
       
-      fs.readFile('bienvenida.html', 'utf8', (error, data) => {
+        fs.readFile('bienvenida.html', 'utf8', (error, data) => {
         if (error) {
            //Escribe qué significa el 500 
            //El 500 significa INternal Error Server: Es un error genérico. Significa que el servidor encontró una condición inesperada
@@ -176,6 +176,20 @@ import fs from 'fs';
         }
       ]));      
     }
+
+    function miopinion(req, res){
+
+      fs.readFile('opinion.html', 'utf8', (error, data) => {
+          if (error) {
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('Oh no!!!!');
+            return;
+          }
+          res.writeHead(200, { 'Content-Type': 'text/html' });
+          res.end(data);
+      });
+
+    }
     //incluye el enlace a la documentación de createServer
     // createServer permite crear un servidor HTTP en Node.js que recibe solicitudes y envía respuestas.
     // Documentación oficial: https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener
@@ -216,17 +230,23 @@ import fs from 'fs';
       else if (url === '/api/cashback'){
         getCashback(req, res);
       }
+      else if (url === '/opinion'){
+        miopinion(req, res);
+      }
       //Agrega una ruta /equipo y su función correspondiente para que muestre el equipo del proyecto
       //Haz una página equipo.html correspondiente
       //Escribe el nombre completo y una cualidad que valores en esa persona de tu equipo
       //Trata de agregar una imagen a equipo.html
       //Explica si la puedes ver, en caso negativo ¿qué crees que pase?
+      //El servidor de Node solo responde el index.html, 
+      // cuando el navegador pide /img/foto.png, Node no sabe qué mandar y responde error o nada. Por eso aparece el ícono de imagen rota.
 
       //Agrega una ruta /opinion
       //Haz una página opinion.html
       // Lee el siguiente artículo y responde ¿Crees que el colonialismo digital es un riesgo para tu carrera profesionl? ¿Para tu vida persona?
       //¿Qué es el freedombox?
       //https://www.aljazeera.com/opinions/2019/3/13/digital-colonialism-is-threatening-the-global-south
+
       
       
       else {
